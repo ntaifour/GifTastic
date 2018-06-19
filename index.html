@@ -5,19 +5,37 @@
  <title>GifTastic</title>
 </head>
 <body>
- 
+    <!-- Row(s) where the GIF button will appear -->
     <div id="gifButtonRow"></div>
 
+    <!-- Form to generate GIF buttons -->
     <form id="gifButton">
         <label for="gifButtonTitle">Add a GIF</label>
         <input type="text" id="gifSearch"><br>
         <input id="gifSubmit" type="submit" value="Submit">
     </form>
 
+    <!-- Section where GIFs will populate -->
     <div id="gifPopulate"></div>
 
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script type="text/javascript">
+
+        var gifList = ["Sports", "Travel", "Red Pandas", "Looping GIFs", "Kanye West", "Trippy", "Donald Trump", "Otters", "Movies", "Soothing"];
+
+        function displayGifs() {
+
+            var gif = $(this).attr("data-name");
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "cJpVt3udm4XbbUi5Z68cHZRKT2jX6QOJ";
+
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response) {
+
+            }
+        
+        }
 
     </script>
 </body>
