@@ -26,12 +26,14 @@
         function displayGifs() {
 
             var gif = $(this).attr("data-name");
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "cJpVt3udm4XbbUi5Z68cHZRKT2jX6QOJ";
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=10&api_key=cJpVt3udm4XbbUi5Z68cHZRKT2jX6QOJ";
 
             $.ajax({
                 url: queryURL,
                 method: "GET"
             }).then(function(response) {
+
+                var rating = 
 
             }
         
