@@ -1,45 +1,33 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
+
 <head>
- <meta charset="UTF-8">
- <title>GifTastic</title>
+    <title>GifTastic</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
-    <!-- Row(s) where the GIF button will appear -->
-    <div id="gifButtonRow"></div>
-
-    <!-- Form to generate GIF buttons -->
-    <form id="gifButton">
-        <label for="gifButtonTitle">Add a GIF</label>
-        <input type="text" id="gifSearch"><br>
-        <input id="gifSubmit" type="submit" value="Submit">
-    </form>
-
-    <!-- Section where GIFs will populate -->
-    <div id="gifPopulate"></div>
-
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-    <script type="text/javascript">
-
-        var gifList = ["Sports", "Travel", "Red Pandas", "Looping GIFs", "Kanye West", "Trippy", "Donald Trump", "Otters", "Movies", "Soothing"];
-
-        function displayGifs() {
-
-            var gif = $(this).attr("data-name");
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&limit=10&api_key=cJpVt3udm4XbbUi5Z68cHZRKT2jX6QOJ";
-
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function(response) {
-
-                var rating = 
-
-            }
-        
-        }
-
-    </script>
+    <div class='container'>
+        <div class='row'>
+            <div id='gifButtons'></div>
+        </div>
+        <div class='col-lg-3'>
+            <form style='margin-top: 20px'id='GIF-form'>
+                <label for='newGifInput'>Add your favorite GIFs</label>
+                <br>
+                <input style='margin-top: 5px' type='text' id='newGifInput'>
+                <br>
+                <input style='margin-top: 13px' id='addGif' type='submit' value='Submit'>
+            </form>
+        </div>
+        <div class='row'>
+            <div class='col-lg-9'>
+                <div class='display'></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/logic.js"></script>
 </body>
 
 </html>
