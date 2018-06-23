@@ -4,7 +4,7 @@ var pausedGif;
 var animatedGif; 
 var stillGif;
 
-//creates buttons
+// creates buttons
 function createButtons(){
 	$('#gifButtons').empty();
 	for(var i = 0; i < gifList.length; i++){
@@ -12,7 +12,7 @@ function createButtons(){
 		$('#gifButtons').append(showBtn);
 	}
 
-	//displays gifs on click
+	// displays gifs on click
 	$('.showBtn').on('click', function(){
 		$('.display').empty();
 
@@ -41,7 +41,8 @@ function createButtons(){
 }
 
 
-//animates and pauses gif on click
+// animates and pauses gif on click
+// still working on getting pause to work
 $(document).on('click', '.playOnClick',function(){
     $(this).attr('src', $(this).data('animated'));
 });
@@ -49,7 +50,7 @@ $(document).on('click', 'pauseOnClick', function(){
     $(this).attr('src', $(this).data('paused'));
 });
 
-//sets a button from input
+// sets a button from input
 $('#addGif').on('click', function(){
 var newGif = $('#newGifInput').val().trim();
 gifList.push(newGif);
